@@ -1,6 +1,12 @@
+/* Google Maps API designed using: */
+/* https://www.fullstackreact.com/articles/how-to-write-a-google-maps-react-component/#the-map-container-component */
+
 /* jshint esnext: true */
+/* jshint ignore:start */
 
 import React, { Component } from 'react';
+import Map from './Map';
+import MapContainer from './MapContainer';
 
 class App extends Component {
   render() {
@@ -10,8 +16,7 @@ class App extends Component {
         <div class="options-box">
           <h1>Wanna Skateboard?</h1>
         </div>
-        {/* TODO: where Map will go */}
-        <div id="map"></div>
+        <MapContainer />
       </div>
     );
   }

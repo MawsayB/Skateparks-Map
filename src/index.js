@@ -1,3 +1,6 @@
+/* jshint esnext: true */
+/* jshint ignore:start */
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
