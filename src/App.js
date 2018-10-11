@@ -1,31 +1,49 @@
 /* Google Maps API designed using: */
-/* https://www.npmjs.com/package/google-maps-react */
+/* https://www.youtube.com/watch?v=W5LhLZqj76s */
 
 /* jshint esnext: true */
 /* jshint ignore:start */
 
+import './App.css';
 import React, { Component } from 'react';
-import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 
 class App extends Component {
 
-  render() {
-    return (
-      <div className="App">
-        <Map
-          google={this.props.google}
-          zoom={15}
-          initialCenter={{
-            lat: 38.788105, lng: -90.497437
-          }}
-          onClick={this.onMapClicked}
-        >
-        </Map>
-      </div>
-    );
+  componentDidMount() {
+    this.renderMap()
   }
+
+  renderMap = () => {
+    loadScript("https://maps.googleapis.com/maps/api/js?key=AIzaSyAeCKdS_7fB9UBZ1qaVUw8BRLl5VCuTzCY&v=3&callback=initMap")
+    window.initMap = this.initMap
+  }
+
+  initMap = () => {
+    // Constructor creates a new map - only center and zoom are required.
+    var map = new window.google.maps.Map(document.getElementById('map'), {
+      center: { lat: 38.788105, lng: -90.497437 },
+      zoom: 13,
+    })
+  }
+
+
+    render() {
+      return (
+        <main>
+          <div id="map"></div>
+        </main>
+      )
+    }
+  }
+
+// plain JavaScript code to load the <script> that renders the map
+function loadScript(url) {
+  var index = window.document.getElementsByTagName("script")[0]
+  var script = window.document.createElement("script")
+  script.src = url
+  script.async = true
+  script.defer = true
+  index.parentNode.insertBefore(script, index)
 }
 
-export default GoogleApiWrapper({
-  apiKey: ('AIzaSyAeCKdS_7fB9UBZ1qaVUw8BRLl5VCuTzCY')
-})(App)
+export default App;
