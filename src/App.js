@@ -42,6 +42,7 @@ class App extends Component {
     axios.get(endPoint + new URLSearchParams(parameters))
     .then(response => {
       this.setState({
+        // stores places in a state called 'venues'
         venues: response.data.response.groups[0].items
       })
       console.log()
