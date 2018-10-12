@@ -15,6 +15,7 @@ import axios from 'axios'
 class App extends Component {
 
   componentDidMount() {
+    this.getVenues()
     this.renderMap()
   }
 
@@ -23,14 +24,24 @@ class App extends Component {
     window.initMap = this.initMap
   }
 
+  /* sets up information to start working with axios */
   getVenues = () => {
-    const endPoint = "https://api.foursquare.com/v2/venues/explore"
+    const endPoint = "https://api.foursquare.com/v2/venues/explore?"
     const parameters = {
-      client_id: "",
-      client_secret: "",
+      client_id: "CR3PE52H5QB3PEC1BPB3HQP4L3PW4WJDEPZSWQKTFBZAQSEI",
+      client_secret: "HJ50REDCZPOXURIFJTJN3T0I2MYVM5YG11ZRIHC4ABTDB4MO",
       query: "skate park",
-      near: "St. Charles, MO"
+      near: "St Charles, MO",
+      v: "20182507"
     }
+
+    axios.get(endPoint + new URLSearchParams(parameters))
+    .then(response => {
+      console.log(response.data.response.groups[0].items)
+    })
+    .catch(error => {
+      console.log("Error! " + error)
+    })
   }
 
   initMap = () => {
