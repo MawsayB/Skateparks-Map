@@ -66,6 +66,7 @@ class App extends Component {
         position: { lat: myVenue.venue.location.lat, lng: myVenue.venue.location.lng },
         map: map,
         title: myVenue.venue.name,
+        icon: 'https://png.icons8.com/ios/50/000000/skateboard.png'
       })
 
     })
