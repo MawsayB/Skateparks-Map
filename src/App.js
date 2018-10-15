@@ -33,8 +33,12 @@ class App extends Component {
     const parameters = {
       client_id: "CR3PE52H5QB3PEC1BPB3HQP4L3PW4WJDEPZSWQKTFBZAQSEI",
       client_secret: "HJ50REDCZPOXURIFJTJN3T0I2MYVM5YG11ZRIHC4ABTDB4MO",
-      query: "skate park",
-      near: "St Charles, MO",
+      // categoryId = Skate Park
+      // for whatever reason, FourSquare views venues for skateboard or rolling skating as "Skate Parks"
+      categoryId: "4bf58dd8d48988d167941735",
+      // sets Lat Long to St. Charles Missouri
+      ll: "38.788105, -90.497437",
+      // sets version of FourSquare API
       v: "20182507"
     }
 
@@ -44,7 +48,6 @@ class App extends Component {
           // stores places in a state called 'venues'
           venues: response.data.response.groups[0].items
         }, this.renderMap())
-        console.log()
       })
       .catch(error => {
         console.log("Error! " + error)
@@ -55,19 +58,19 @@ class App extends Component {
     /* Constructor creates a new map - only center and zoom are required. */
     var map = new window.google.maps.Map(document.getElementById('map'), {
       center: { lat: 38.788105, lng: -90.497437 },
-      zoom: 13,
+      zoom: 9,
     })
 
-    this.state.venues.map(myVenue => {
+    this.state.venues.forEach(myVenue => {
       var marker = new window.google.maps.Marker({
         position: { lat: myVenue.venue.location.lat, lng: myVenue.venue.location.lng },
-        map: map
+        map: map,
+        title: myVenue.venue.name,
       })
 
     })
 
   }
-
 
   render() {
     return (
