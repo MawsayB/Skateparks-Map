@@ -74,7 +74,9 @@ class App extends Component {
     // displays dynamic markers
     this.state.venues.forEach(myVenue => {
 
-      var contentString = `${myVenue.venue.name} <br/> ${myVenue.venue.location.address}`
+      var contentString = `<div><strong>${myVenue.venue.name} </strong><br/> 
+      ${myVenue.venue.location.address} </br>
+      ${myVenue.venue.location.city}, ${myVenue.venue.location.state} ${myVenue.venue.location.postalCode}</div>`
 
       // creates markers
       var marker = new window.google.maps.Marker({
