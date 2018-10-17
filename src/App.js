@@ -64,18 +64,17 @@ class App extends Component {
   initMap = () => {
     /* Constructor creates a new map - only center and zoom are required. */
     var map = new window.google.maps.Map(document.getElementById('map'), {
-      center: { lat: 38.788105, lng: -90.497437 },
+      center: { lat: 38.6270, lng: -90.1994 },
       zoom: 9,
     })
 
     // creates InfoWindows
     var infowindow = new window.google.maps.InfoWindow()
 
-    // displays dynamic markers
+    // displays dynamic markers from FourSquare API
     this.state.venues.forEach(myVenue => {
 
       var contentString = `<div><strong>${myVenue.venue.name} </strong><br/> 
-      ${myVenue.venue.location.address} </br>
       ${myVenue.venue.location.city}, ${myVenue.venue.location.state} ${myVenue.venue.location.postalCode}</div>`
 
       // creates markers
