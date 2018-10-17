@@ -15,7 +15,14 @@ import axios from 'axios'
 class App extends Component {
 
   state = {
-    venues: []
+    venues: [
+      // { title: 'Earth Surf', location: { lat: 38.7841912, lng: -90.4176207 } },
+      // { title: 'Youth Activity Park', location: { lat: 38.7689394, lng: -90.7627661 } },
+      // { title: 'Fountain Lakes', location: { lat: 38.8232839, lng: -90.5269639 } },
+      // { title: 'Paul A. Westhoff Park', location: { lat: 38.8128159, lng: -90.6866456 } },
+      // { title: 'Peter Mathews Memorial Skate Garden', location: { lat: 38.588203, lng: -90.265148 } },
+      // { title: 'Ramp Riders', location: { lat: 38.6062774, lng: -90.2163259 } }
+    ]
   }
 
   componentDidMount() {
@@ -61,13 +68,31 @@ class App extends Component {
       zoom: 9,
     })
 
+    // creates InfoWindows
+    var infowindow = new window.google.maps.InfoWindow()
+
+    // displays dynamic markers
     this.state.venues.forEach(myVenue => {
+
+      var contentString = `${myVenue.venue.name} <br/> ${myVenue.venue.location.address}`
+
+      // creates markers
       var marker = new window.google.maps.Marker({
         position: { lat: myVenue.venue.location.lat, lng: myVenue.venue.location.lng },
         map: map,
         title: myVenue.venue.name,
         icon: 'https://png.icons8.com/ios/50/000000/skateboard.png'
       })
+
+
+      // click on a marker
+      marker.addListener('click', function () {
+        // change the content
+        infowindow.setContent(contentString)
+
+        // adds event listener to marker to display InfoWindow
+        infowindow.open(map, marker);
+      });
 
     })
 
