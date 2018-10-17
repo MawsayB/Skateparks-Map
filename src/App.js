@@ -102,6 +102,14 @@ class App extends Component {
   render() {
     return (
       <main>
+        <div class="input">
+          <input
+            type="text"
+            placeholder="Search"
+            value={this.state.query}
+            onChange={(event) => this.updateQuery(event.target.value)}
+          />
+        </div>
         <div id="map"></div>
       </main>
     )
