@@ -1,8 +1,5 @@
-/* Google Maps API designed using: */
-/* https://www.youtube.com/watch?v=W5LhLZqj76s */
-
-/* Google Markers designed using: */
-/* https://www.youtube.com/watch?v=nDJ00zO9X2U&list=PLgOB68PvvmWCGNn8UMTpcfQEiITzxEEA1&index=4 */
+/* Google Maps API, FourSquare API, markers and InfoWindows designed using: */
+/* https://www.youtube.com/watch?v=ywdxLNjhBYw&list=PLgOB68PvvmWCGNn8UMTpcfQEiITzxEEA1 */
 
 /* jshint esnext: true */
 /* jshint ignore:start */
