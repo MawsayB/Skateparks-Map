@@ -74,7 +74,23 @@ class App extends Component {
     // displays dynamic markers from FourSquare API
     this.state.venues.forEach(myVenue => {
 
-      var contentString = `<div><strong>${myVenue.venue.name} </strong><br/> 
+      var address;
+      if(myVenue.venue.location.address === undefined){
+        return;
+      } else {
+        address = myVenue.venue.location.address;
+      }
+
+      var name;
+      if(myVenue.venue.name === "Plannine"){
+        name = "Earth Surf"
+      } else {
+        name = myVenue.venue.name;
+      }
+
+
+      var contentString = `<div><strong>${name} </strong><br/> 
+      ${address} <br/>
       ${myVenue.venue.location.city}, ${myVenue.venue.location.state} ${myVenue.venue.location.postalCode}</div>`
 
       // creates markers
