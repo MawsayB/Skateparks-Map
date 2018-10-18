@@ -50,6 +50,7 @@ class App extends Component {
     //   name: 'Ramp Riders', location: { lat: 38.6062774, lng: -90.2163259 }
     // }
 
+    // TODO: consider pushing this to the venues variable
     // for(var i = 0; i < skateParks.length; i++) {
     //   this.setState({
     //     displayName: skateParks[i].name
@@ -60,7 +61,7 @@ class App extends Component {
       .then(response => {
         this.setState({
           // stores places in a state called 'venues'
-          venues: response.data.response.groups[0].items 
+          venues: response.data.response.groups[0].items,
         }, this.renderMap())
       })
       .catch(error => {
@@ -88,12 +89,23 @@ class App extends Component {
         address = myVenue.venue.location.address;
       }
 
+      // filters API to be accurate to actual skate parks
       var name;
-      if (myVenue.venue.name === "Plannine") {
+      if (myVenue.venue.name === "Plan Nine Skate Park") {
+        return;
+      } else if (myVenue.venue.name === "Plan Nine Skatepark") {
+        return;
+      } else if (myVenue.venue.name === "Arch Rival Roller Girls' Roller Derby") {
+        return;
+      } else if (myVenue.venue.name === "Plannine") {
         name = "Earth Surf"
+      } else if (myVenue.venue.name === "Great Skate") {
+        return;
       } else {
         name = myVenue.venue.name;
       }
+
+      //remove index 3 from the venue variable
 
       var contentString = `<div><strong>${name} </strong><br/> 
       ${address} <br/>
