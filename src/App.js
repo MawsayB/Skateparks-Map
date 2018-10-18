@@ -15,14 +15,7 @@ import axios from 'axios'
 class App extends Component {
 
   state = {
-    venues: [
-      // { title: 'Earth Surf', location: { lat: 38.7841912, lng: -90.4176207 } },
-      // { title: 'Youth Activity Park', location: { lat: 38.7689394, lng: -90.7627661 } },
-      // { title: 'Fountain Lakes', location: { lat: 38.8232839, lng: -90.5269639 } },
-      // { title: 'Paul A. Westhoff Park', location: { lat: 38.8128159, lng: -90.6866456 } },
-      // { title: 'Peter Mathews Memorial Skate Garden', location: { lat: 38.588203, lng: -90.265148 } },
-      // { title: 'Ramp Riders', location: { lat: 38.6062774, lng: -90.2163259 } }
-    ]
+    venues: []
   }
 
   componentDidMount() {
@@ -49,11 +42,25 @@ class App extends Component {
       v: "20182507"
     }
 
+    // stores relevant data that Four Square missed into venues variable
+    // var skateParks = {
+    //   name: 'Youth Activity Park', location: { lat: 38.7689394, lng: -90.7627661 },
+    //   name: 'Paul A. Westhoff Park', location: { lat: 38.8128159, lng: -90.6866456 },
+    //   name: 'Peter Mathews Memorial Skate Garden', location: { lat: 38.588203, lng: -90.265148 },
+    //   name: 'Ramp Riders', location: { lat: 38.6062774, lng: -90.2163259 }
+    // }
+
+    // for(var i = 0; i < skateParks.length; i++) {
+    //   this.setState({
+    //     displayName: skateParks[i].name
+    //   })
+    // }
+
     axios.get(endPoint + new URLSearchParams(parameters))
       .then(response => {
         this.setState({
           // stores places in a state called 'venues'
-          venues: response.data.response.groups[0].items
+          venues: response.data.response.groups[0].items 
         }, this.renderMap())
       })
       .catch(error => {
@@ -75,19 +82,18 @@ class App extends Component {
     this.state.venues.forEach(myVenue => {
 
       var address;
-      if(myVenue.venue.location.address === undefined){
+      if (myVenue.venue.location.address === undefined) {
         return;
       } else {
         address = myVenue.venue.location.address;
       }
 
       var name;
-      if(myVenue.venue.name === "Plannine"){
+      if (myVenue.venue.name === "Plannine") {
         name = "Earth Surf"
       } else {
         name = myVenue.venue.name;
       }
-
 
       var contentString = `<div><strong>${name} </strong><br/> 
       ${address} <br/>
@@ -95,9 +101,11 @@ class App extends Component {
 
       // creates markers
       var marker = new window.google.maps.Marker({
+
+
         position: { lat: myVenue.venue.location.lat, lng: myVenue.venue.location.lng },
         map: map,
-        title: myVenue.venue.name,
+        title: name,
         icon: 'https://png.icons8.com/ios/50/000000/skateboard.png'
       })
 
@@ -118,7 +126,7 @@ class App extends Component {
   render() {
     return (
       <main>
-        <div class="input">
+        <div className="input">
           <input
             type="text"
             placeholder="Search"
