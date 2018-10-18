@@ -42,21 +42,6 @@ class App extends Component {
       v: "20182507"
     }
 
-    // stores relevant data that Four Square missed into venues variable
-    // var skateParks = {
-    //   name: 'Youth Activity Park', location: { lat: 38.7689394, lng: -90.7627661 },
-    //   name: 'Paul A. Westhoff Park', location: { lat: 38.8128159, lng: -90.6866456 },
-    //   name: 'Peter Mathews Memorial Skate Garden', location: { lat: 38.588203, lng: -90.265148 },
-    //   name: 'Ramp Riders', location: { lat: 38.6062774, lng: -90.2163259 }
-    // }
-
-    // TODO: consider pushing this to the venues variable
-    // for(var i = 0; i < skateParks.length; i++) {
-    //   this.setState({
-    //     displayName: skateParks[i].name
-    //   })
-    // }
-
     axios.get(endPoint + new URLSearchParams(parameters))
       .then(response => {
         this.setState({
@@ -85,6 +70,8 @@ class App extends Component {
       var address;
       if (myVenue.venue.location.address === undefined) {
         return;
+      } else if (myVenue.venue.location.address === "3894-3994 Huster Rd") {
+        address = "3740 Huster Road";
       } else {
         address = myVenue.venue.location.address;
       }
@@ -104,8 +91,6 @@ class App extends Component {
       } else {
         name = myVenue.venue.name;
       }
-
-      //remove index 3 from the venue variable
 
       var contentString = `<div><strong>${name} </strong><br/> 
       ${address} <br/>
