@@ -52,23 +52,11 @@ class App extends Component {
       })
   }
 
-  hardCodedVenues = () => {
-    // Hard-coded skate parks that are shown to the user.
-    var locations = [
-      { title: 'Earth Surf', location: { lat: 38.7841912, lng: -90.4176207 } },
-      { title: 'Youth Activity Park', location: { lat: 38.7689394, lng: -90.7627661 } },
-      { title: 'Fountain Lakes', location: { lat: 38.8232839, lng: -90.5269639 } },
-      { title: 'Paul A. Westhoff Park', location: { lat: 38.8128159, lng: -90.6866456 } },
-      { title: 'Peter Mathews Memorial Skate Garden', location: { lat: 38.588203, lng: -90.265148 } },
-      { title: 'Ramp Riders', location: { lat: 38.6062774, lng: -90.2163259 } }
-    ];
-  }
-
   initMap = () => {
     /* Constructor creates a new map - only center and zoom are required. */
     var map = new window.google.maps.Map(document.getElementById('map'), {
-      center: { lat: 38.6270, lng: -90.1994 },
-      zoom: 8,
+      center: { lat: 38.8405, lng: -90.4691 },
+      zoom: 11,
     })
 
     // creates InfoWindows
