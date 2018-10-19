@@ -16,7 +16,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.getVenues()
+    this.getFourSquareVenues()
   }
 
   renderMap = () => {
@@ -25,7 +25,7 @@ class App extends Component {
   }
 
   /* sets up information to start working with axios */
-  getVenues = () => {
+  getFourSquareVenues = () => {
     const endPoint = "https://api.foursquare.com/v2/venues/explore?"
     const parameters = {
       client_id: "CR3PE52H5QB3PEC1BPB3HQP4L3PW4WJDEPZSWQKTFBZAQSEI",
@@ -33,6 +33,7 @@ class App extends Component {
       // categoryId = Skate Park
       // for whatever reason, FourSquare views venues for skateboard or rolling skating as "Skate Parks"
       categoryId: "4bf58dd8d48988d167941735",
+
       // sets Lat Long to St. Charles Missouri
       ll: "38.788105, -90.497437",
       // sets version of FourSquare API
@@ -51,11 +52,23 @@ class App extends Component {
       })
   }
 
+  hardCodedVenues = () => {
+    // Hard-coded skate parks that are shown to the user.
+    var locations = [
+      { title: 'Earth Surf', location: { lat: 38.7841912, lng: -90.4176207 } },
+      { title: 'Youth Activity Park', location: { lat: 38.7689394, lng: -90.7627661 } },
+      { title: 'Fountain Lakes', location: { lat: 38.8232839, lng: -90.5269639 } },
+      { title: 'Paul A. Westhoff Park', location: { lat: 38.8128159, lng: -90.6866456 } },
+      { title: 'Peter Mathews Memorial Skate Garden', location: { lat: 38.588203, lng: -90.265148 } },
+      { title: 'Ramp Riders', location: { lat: 38.6062774, lng: -90.2163259 } }
+    ];
+  }
+
   initMap = () => {
     /* Constructor creates a new map - only center and zoom are required. */
     var map = new window.google.maps.Map(document.getElementById('map'), {
       center: { lat: 38.6270, lng: -90.1994 },
-      zoom: 9,
+      zoom: 8,
     })
 
     // creates InfoWindows
@@ -64,6 +77,7 @@ class App extends Component {
     // displays dynamic markers from FourSquare API
     this.state.venues.forEach(myVenue => {
 
+      // filters API to be show correct address for Earth Surf
       var address;
       if (myVenue.venue.location.address === undefined) {
         return;
@@ -89,14 +103,13 @@ class App extends Component {
         name = myVenue.venue.name;
       }
 
+      // TODO: add photo(s) and link to the directions
       var contentString = `<div><strong>${name} </strong><br/> 
       ${address} <br/>
       ${myVenue.venue.location.city}, ${myVenue.venue.location.state} ${myVenue.venue.location.postalCode}</div>`
 
       // creates markers
       var marker = new window.google.maps.Marker({
-
-
         position: { lat: myVenue.venue.location.lat, lng: myVenue.venue.location.lng },
         map: map,
         title: name,
@@ -117,6 +130,7 @@ class App extends Component {
 
   }
 
+  // inside Return, put a link to the Facebook Group
   render() {
     return (
       <main>

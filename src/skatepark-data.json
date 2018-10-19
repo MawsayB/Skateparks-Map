@@ -1,24 +1,158 @@
     var skateParks = {
-      name: 'Youth Activity Park', location: { lat: 38.7689394, lng: -90.7627661 },
-      name: 'Paul A. Westhoff Park', location: { lat: 38.8128159, lng: -90.6866456 },
-      name: 'Peter Mathews Memorial Skate Garden', location: { lat: 38.588203, lng: -90.265148 },
-      name: 'Ramp Riders', location: { lat: 38.6062774, lng: -90.2163259 }
+      name: 'Youth Activity Park', location: { lat: 38.7689394, lng: -90.7627661
+        },
+      name: 'Paul A. Westhoff Park', location: { lat: 38.8128159, lng: -90.6866456
+        },
+      name: 'Peter Mathews Memorial Skate Garden', location: { lat: 38.588203, lng: -90.265148
+        },
+      name: 'Ramp Riders', location: { lat: 38.6062774, lng: -90.2163259
+        }
     }
-
-
     // stores relevant data that Four Square missed into venues variable
-
-{
-    // Default encoding for text
-    "encoding" : "UTF-8",
-
-    // Plug-ins loaded at start-up
-    "plug-ins" : [
-        "python",
-        "c++",
-        "ruby"
-        ],
-
-    // Tab indent size
-    "indent" : { "length" : 3, "use_space": true }
-}
+    {
+        // Default encoding for text
+        "response": {
+            "venues": [
+                {
+                    "id": "4c45d204f97fbe9a5212bd90"
+        "name": "Youth Activity Park"
+        "contact": {
+                        "phone": "6369492000"
+        "formattedPhone": "(636) 561-4964"
+                    }
+        "location": {
+                        "address": "7801 State Highway N"
+        "lat": 38.7689394
+        "lng": -90.7627661
+        "labeledLatLngs": [
+                            "0": {
+                                "label": ""
+        "lat": ""
+        "lng": ""
+                            }
+                        ]
+        "distance": ""
+        "postalCode": "63368"
+        "cc": "US"
+        "city": "Dardenne Prairie"
+        "state": "MO"
+        "country": "United States"
+        "formattedAddress": [
+                            "0": "209 S Kingshighway St"
+        "1": "St. Charles, MO 63301"
+                        ]
+                    }
+        "categories": [
+                        "0": {
+                            "id": "4bf58dd8d48988d19d941735"
+        "name": ""
+        "pluralName": ""
+        "shortName": ""
+        "icon": {
+                                "prefix": ""
+        "suffix": ".png"
+                            }
+        "primary": true
+                        }
+                    ]
+        "verified": true
+        "stats": {
+                        "tipCount": 8
+        "usersCount": 358
+        "checkinsCount": 3816
+                    }
+        "url": "http://www.lindenwood.edu/"
+        "venueRatingBlacklisted": true
+        "beenHere": {
+                        "lastCheckinExpiredAt": 0
+                    }
+        "specials": {
+                        "count": 0
+        "items": []
+                    }
+        "storeId": ""
+        "hereNow": {
+                        "count": 0
+        "summary": "Nobody here"
+        "groups": []
+                    }
+        "referralId": "v-1539912746"
+        "venueChains": []
+        "hasPerk": false
+                }
+        {
+                    "id": "4c07c9aec69aa5939dc69ba2"
+        "name": "Harmon Hall - Lindenwood University"
+        "contact": {}
+        "location": {
+                        "address": "209 S Kigshighway"
+        "lat": 38.78919191523868
+        "lng": -90.49902709342744
+        "labeledLatLngs": [
+                            "0": {
+                                "label": "display"
+        "lat": 38.78919191523868
+        "lng": -90.49902709342744
+                            }
+                        ]
+        "distance": 183
+        "postalCode": "63301"
+        "cc": "US"
+        "city": "St. Charles"
+        "state": "MO"
+        "country": "United States"
+        "formattedAddress": [
+                            "0": "209 S Kigshighway"
+        "1": "St. Charles, MO 63301"
+                        ]
+                    }
+        "categories": [
+                        "0": {
+                            "id": "4bf58dd8d48988d19f941735"
+        "name": "College Technology Building"
+        "pluralName": "College Technology Buildings"
+        "shortName": "Technology"
+        "icon": {
+                                "prefix": "https://ss3.4sqi.net/img/categories_v2/education/collegeacademicbuildings_technology_"
+        "suffix": ".png"
+                            }
+        "primary": true
+                        }
+                    ]
+        "verified": true
+        "stats": {
+                        "tipCount": 3
+        "usersCount": 327
+        "checkinsCount": 3441
+                    }
+        "url": "http://www.lindenwood.edu/"
+        "venueRatingBlacklisted": true
+        "beenHere": {
+                        "lastCheckinExpiredAt": 0
+                    }
+        "specials": {
+                        "count": 0
+        "items": []
+                    }
+        "storeId": ""
+        "hereNow": {
+                        "count": 0
+        "summary": "Nobody here"
+        "groups": []
+                    }
+        "referralId": "v-1539912746"
+        "venueChains": []
+        "hasPerk": false
+                },
+                // Plug-ins loaded at start-up
+                "plug-ins": [
+                    "python",
+                    "c++",
+                    "ruby"
+                ],
+                // Tab indent size
+                "indent": {
+                    "length": 3,
+                    "use_space": true
+                }
+            }
