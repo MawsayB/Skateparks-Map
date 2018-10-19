@@ -102,6 +102,26 @@ class App extends Component {
         city = "Dardenne Prairie"
         state = "MO"
         postalCode = "63368"
+      } else if (myVenue.venue.name === "Plannine") {
+        name = "Peter Mathews Memorial Skate Garden"
+        address = "4415 Morganford Road"
+        city = "St. Louis"
+        state = "MO"
+        postalCode = "63116"
+      } else if (myVenue.venue.name === "Plan Nine Skate Park") {
+        name = "Ramp Riders"
+        address = " 2324 Salena Street"
+        city = "St. Louis"
+        state = "MO"
+        postalCode = "63104"
+      } else if (myVenue.venue.name === "Plannine Skatepark") {
+        name = "Earth Surf"
+        address = "5555 St.Louis Mills Blvd #373"
+        city = myVenue.venue.location.city
+        state = myVenue.venue.location.state
+        postalCode = myVenue.venue.location.postalCode
+      } else if (myVenue.venue.name === "Plan Nine Skatepark") {
+        return;
       } else {
         address = myVenue.venue.address
         name = myVenue.venue.name
