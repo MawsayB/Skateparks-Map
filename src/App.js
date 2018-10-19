@@ -66,35 +66,54 @@ class App extends Component {
     this.state.venues.forEach(myVenue => {
 
       // filters API to be show correct address for Earth Surf
-      var address;
-      if (myVenue.venue.location.address === undefined) {
-        return;
-      } else if (myVenue.venue.location.address === "3894-3994 Huster Rd") {
-        address = "3740 Huster Road";
-      } else {
-        address = myVenue.venue.location.address;
-      }
+      var address
+      var name
+      var city
+      var state  
+      var postalCode
+      // var lat;
+      // var lng;
 
       // filters API to be accurate to actual skate parks
-      var name;
-      if (myVenue.venue.name === "Plan Nine Skate Park") {
-        return;
-      } else if (myVenue.venue.name === "Plan Nine Skatepark") {
-        return;
-      } else if (myVenue.venue.name === "Arch Rival Roller Girls' Roller Derby") {
-        return;
-      } else if (myVenue.venue.name === "Plannine") {
-        name = "Earth Surf"
+
+      // if (myVenue.venue.name === "Plan Nine Skate Park") {
+      //   return;
+      // } else if (myVenue.venue.name === "Plan Nine Skatepark") {
+      //   return;
+      // } else if (myVenue.venue.name === "Arch Rival Roller Girls' Roller Derby") {
+      //   return;
+      // } else if (myVenue.venue.name === "Plannine") {
+      //   name = "Earth Surf"
+      if (myVenue.venue.name === "Westhoff Plaza Skate Park") {
+        address = "810 Sheppard Drive"
+        name = myVenue.venue.name
+        city = myVenue.venue.location.city
+        state = myVenue.venue.location.state
+        postalCode = myVenue.venue.location.postalCode
+      } else if (myVenue.venue.name === "Fountain Lakes Park") {
+        address = "3850 Huster Road"
+        name = myVenue.venue.name
+        city = myVenue.venue.location.city
+        state = myVenue.venue.location.state
+        postalCode = myVenue.venue.location.postalCode
       } else if (myVenue.venue.name === "Great Skate") {
-        return;
+        name = "Youth Activity Park"
+        address = "7801 State Highway N"
+        city = "Dardenne Prairie"
+        state = "MO"
+        postalCode = "63368"
       } else {
-        name = myVenue.venue.name;
+        address = myVenue.venue.address
+        name = myVenue.venue.name
+        city = myVenue.venue.location.city
+        state = myVenue.venue.location.state
+        postalCode = myVenue.venue.location.postalCode
       }
 
       // TODO: add photo(s) and link to the directions
       var contentString = `<div><strong>${name} </strong><br/> 
       ${address} <br/>
-      ${myVenue.venue.location.city}, ${myVenue.venue.location.state} ${myVenue.venue.location.postalCode}</div>`
+      ${city}, ${state} ${postalCode}</div>`
 
       // creates markers
       var marker = new window.google.maps.Marker({
