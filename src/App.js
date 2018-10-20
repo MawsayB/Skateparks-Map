@@ -55,8 +55,8 @@ class App extends Component {
   initMap = () => {
     /* Constructor creates a new map - only center and zoom are required. */
     var map = new window.google.maps.Map(document.getElementById('map'), {
-      center: { lat: 38.8405, lng: -90.4691 },
-      zoom: 11,
+      center: { lat: 38.7131, lng: -90.4298 },
+      zoom: 10,
     })
 
     // creates InfoWindows
@@ -69,57 +69,61 @@ class App extends Component {
       var address
       var name
       var city
-      var state  
+      var state
       var postalCode
-      // var lat;
-      // var lng;
+      var lat;
+      var lng;
 
-      // filters API to be accurate to actual skate parks
+      // changes API to be accurate to actual skate parks
 
-      // if (myVenue.venue.name === "Plan Nine Skate Park") {
-      //   return;
-      // } else if (myVenue.venue.name === "Plan Nine Skatepark") {
-      //   return;
-      // } else if (myVenue.venue.name === "Arch Rival Roller Girls' Roller Derby") {
-      //   return;
-      // } else if (myVenue.venue.name === "Plannine") {
-      //   name = "Earth Surf"
       if (myVenue.venue.name === "Westhoff Plaza Skate Park") {
         address = "810 Sheppard Drive"
         name = myVenue.venue.name
         city = myVenue.venue.location.city
         state = myVenue.venue.location.state
         postalCode = myVenue.venue.location.postalCode
+        lat = myVenue.venue.location.lat
+        lng = myVenue.venue.location.lng
       } else if (myVenue.venue.name === "Fountain Lakes Park") {
         address = "3850 Huster Road"
         name = myVenue.venue.name
         city = myVenue.venue.location.city
         state = myVenue.venue.location.state
         postalCode = myVenue.venue.location.postalCode
+        lat = myVenue.venue.location.lat
+        lng = myVenue.venue.location.lng
       } else if (myVenue.venue.name === "Great Skate") {
         name = "Youth Activity Park"
         address = "7801 State Highway N"
         city = "Dardenne Prairie"
         state = "MO"
         postalCode = "63368"
+        lat = 38.769270
+        lng = -90.763520
       } else if (myVenue.venue.name === "Plannine") {
         name = "Peter Mathews Memorial Skate Garden"
         address = "4415 Morganford Road"
         city = "St. Louis"
         state = "MO"
         postalCode = "63116"
+        lat = 38.588140
+        lng = -90.265200
       } else if (myVenue.venue.name === "Plan Nine Skate Park") {
         name = "Ramp Riders"
         address = " 2324 Salena Street"
         city = "St. Louis"
         state = "MO"
         postalCode = "63104"
+        lat = 38.606860
+        lng = -90.216380
       } else if (myVenue.venue.name === "Plannine Skatepark") {
         name = "Earth Surf"
         address = "5555 St.Louis Mills Blvd #373"
         city = myVenue.venue.location.city
         state = myVenue.venue.location.state
         postalCode = myVenue.venue.location.postalCode
+        lat = myVenue.venue.location.lat
+        lng = myVenue.venue.location.lng
       } else if (myVenue.venue.name === "Plan Nine Skatepark") {
         return;
       } else {
@@ -128,6 +132,8 @@ class App extends Component {
         city = myVenue.venue.location.city
         state = myVenue.venue.location.state
         postalCode = myVenue.venue.location.postalCode
+        lat = myVenue.venue.location.lat
+        lng = myVenue.venue.location.lng
       }
 
       // TODO: add photo(s) and link to the directions
@@ -137,7 +143,7 @@ class App extends Component {
 
       // creates markers
       var marker = new window.google.maps.Marker({
-        position: { lat: myVenue.venue.location.lat, lng: myVenue.venue.location.lng },
+        position: { lat: lat, lng: lng },
         map: map,
         title: name,
         icon: 'https://png.icons8.com/ios/50/000000/skateboard.png'
