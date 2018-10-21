@@ -25,6 +25,16 @@ class App extends Component {
     window.initMap = this.initMap
   }
 
+  filterVenues(query) {
+    let f = query ? this.venues.filter(v => v.name.includes(query)) : this.venues;
+    this.marker.forEach(m => {
+      m.name.includes(query) ?
+        m.setVisible(true) :
+        m.setVisible(false);
+    });
+    this.setState({ filtered: f, query: query });
+  }
+
   /* sets up information to start working with axios */
   getFourSquareVenues = () => {
     const endPoint = "https://api.foursquare.com/v2/venues/explore?"
@@ -170,12 +180,12 @@ class App extends Component {
       <Flexbox flexDirection="column" minHeight="100vh">
         <Flexbox element="section" id="searchPanel" width="100%">
           <h1>SKATE PARKS</h1>
-            <input
-              type="text"
-              placeholder="Filter Parks"
-              value={this.state.query}
-              onChange={(event) => this.updateQuery(event.target.value)}
-            />
+          <input
+            type="text"
+            placeholder="Search"
+            value={this.state.query}
+            onChange={(event) => this.updateQuery(event.target.value)}
+          />
         </Flexbox>
         <Flexbox element="section" id="map" height="100vh" width="100%">
         </Flexbox>
