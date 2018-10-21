@@ -19,10 +19,10 @@ To Run:
 ## Technologies
 
 * Axios
-* Four Square
-* Google Maps
+* Four Square API
+* Google Maps API
 * Service Worker
-* Screen Reader Accessible
+* Screen Reader
 
 ## Create React App
 

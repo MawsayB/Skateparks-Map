@@ -6,6 +6,7 @@
 
 import './App.css'
 import React, { Component } from 'react'
+import Flexbox from 'flexbox-react'
 
 import axios from 'axios'
 
@@ -31,10 +32,11 @@ class App extends Component {
       client_id: "CR3PE52H5QB3PEC1BPB3HQP4L3PW4WJDEPZSWQKTFBZAQSEI",
       client_secret: "HJ50REDCZPOXURIFJTJN3T0I2MYVM5YG11ZRIHC4ABTDB4MO",
       // categoryId = Skate Park
-      // for whatever reason, FourSquare views venues for skateboard or rolling skating as "Skate Parks"
+      // for whatever reason, FourSquare views venues for "skateboard" or "rolling skating" as "Skate Parks"
+      // when there IS a category exclusively for roller skating rinks :shrugs:
       categoryId: "4bf58dd8d48988d167941735",
 
-      // sets Lat Long to St. Charles Missouri
+      // sets Lat Long to Maryland Heights, Missouri
       ll: "38.788105, -90.497437",
       // sets version of FourSquare API
       v: "20182507"
@@ -65,7 +67,6 @@ class App extends Component {
     // displays dynamic markers from FourSquare API
     this.state.venues.forEach(myVenue => {
 
-      // filters API to be show correct address for Earth Surf
       var address
       var name
       var city
@@ -124,7 +125,7 @@ class App extends Component {
         postalCode = myVenue.venue.location.postalCode
         lat = myVenue.venue.location.lat
         lng = myVenue.venue.location.lng
-      } else if (myVenue.venue.name === "Plan Nine Skatepark") {
+      } else if (myVenue.venue.name === "Plan Nine Skatepark" || myVenue.venue.name === "Arch Rival Roller Girls' Roller Derby") {
         return;
       } else {
         address = myVenue.venue.address
@@ -136,7 +137,10 @@ class App extends Component {
         lng = myVenue.venue.location.lng
       }
 
-      // TODO: add photo(s) and link to the directions
+      // creates the Park List
+      var nameListing = `<div>${name}</div>`
+
+
       var contentString = `<div><strong>${name} </strong><br/> 
       ${address} <br/>
       ${city}, ${state} ${postalCode}</div>`
@@ -149,7 +153,6 @@ class App extends Component {
         icon: 'https://png.icons8.com/ios/50/000000/skateboard.png'
       })
 
-
       // click on a marker
       marker.addListener('click', function () {
         // change the content
@@ -160,23 +163,23 @@ class App extends Component {
       });
 
     })
-
   }
 
-  // inside Return, put a link to the Facebook Group
   render() {
     return (
-      <main>
-        <div className="input">
-          <input
-            type="text"
-            placeholder="Search"
-            value={this.state.query}
-            onChange={(event) => this.updateQuery(event.target.value)}
-          />
-        </div>
-        <div id="map"></div>
-      </main>
+      <Flexbox flexDirection="column" minHeight="100vh">
+        <Flexbox element="section" id="searchPanel" width="100%">
+          <h1>SKATE PARKS</h1>
+            <input
+              type="text"
+              placeholder="Filter Parks"
+              value={this.state.query}
+              onChange={(event) => this.updateQuery(event.target.value)}
+            />
+        </Flexbox>
+        <Flexbox element="section" id="map" height="100vh" width="100%">
+        </Flexbox>
+      </Flexbox>
     )
   }
 }
