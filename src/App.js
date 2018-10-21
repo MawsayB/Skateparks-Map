@@ -137,7 +137,7 @@ class App extends Component {
         lng = myVenue.venue.location.lng
       }
 
-      var contentString = `${name}<br/> 
+      var contentString = `<div id="popup"> ${name}</div><br/> 
       ${address} <br/>
       ${city}, ${state} ${postalCode}`
 

@@ -15,4 +15,8 @@ body {
    margin-top: 15px;
  }
 
+ #popup {
+   font-weight: bold;
+   display: inline-block;
+ }
  
