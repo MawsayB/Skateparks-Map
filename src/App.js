@@ -25,16 +25,6 @@ class App extends Component {
     window.initMap = this.initMap
   }
 
-  filterVenues(query) {
-    let f = query ? this.venues.filter(v => v.name.includes(query)) : this.venues;
-    this.marker.forEach(m => {
-      m.name.includes(query) ?
-        m.setVisible(true) :
-        m.setVisible(false);
-    });
-    this.setState({ filtered: f, query: query });
-  }
-
   /* sets up information to start working with axios */
   getFourSquareVenues = () => {
     const endPoint = "https://api.foursquare.com/v2/venues/explore?"
@@ -147,10 +137,6 @@ class App extends Component {
         lng = myVenue.venue.location.lng
       }
 
-      // creates the Park List
-      var nameListing = `<div>${name}</div>`
-
-
       var contentString = `<div><strong>${name} </strong><br/> 
       ${address} <br/>
       ${city}, ${state} ${postalCode}</div>`
@@ -160,14 +146,16 @@ class App extends Component {
         position: { lat: lat, lng: lng },
         map: map,
         title: name,
+        animation: window.google.maps.Animation.DROP,
         icon: 'https://png.icons8.com/ios/50/000000/skateboard.png'
       })
 
       // click on a marker
-      marker.addListener('click', function () {
+      window.google.maps.event.addListener(marker, 'click', function () {
+        // change the icon
+        marker.setIcon('https://png.icons8.com/ios/50/000000/skateboard-filled.png')
         // change the content
         infowindow.setContent(contentString)
-
         // adds event listener to marker to display InfoWindow
         infowindow.open(map, marker);
       });
