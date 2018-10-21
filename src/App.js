@@ -137,9 +137,12 @@ class App extends Component {
         lng = myVenue.venue.location.lng
       }
 
-      var contentString = `<div><strong>${name} </strong><br/> 
+      var contentString = `${name}<br/> 
       ${address} <br/>
-      ${city}, ${state} ${postalCode}</div>`
+      ${city}, ${state} ${postalCode}`
+
+      var hallowIcon = 'https://png.icons8.com/ios/50/000000/skateboard.png'
+      var selectedIcon = 'https://png.icons8.com/ios/50/000000/skateboard-filled.png'
 
       // creates markers
       var marker = new window.google.maps.Marker({
@@ -147,17 +150,28 @@ class App extends Component {
         map: map,
         title: name,
         animation: window.google.maps.Animation.DROP,
-        icon: 'https://png.icons8.com/ios/50/000000/skateboard.png'
+        icon: hallowIcon
       })
 
       // click on a marker
       window.google.maps.event.addListener(marker, 'click', function () {
-        // change the icon
-        marker.setIcon('https://png.icons8.com/ios/50/000000/skateboard-filled.png')
         // change the content
         infowindow.setContent(contentString)
         // adds event listener to marker to display InfoWindow
-        infowindow.open(map, marker);
+        infowindow.open(map, marker)
+      });
+
+      window.google.maps.event.addListener(marker, 'mouseover', function () {
+        // change the icon
+        marker.setIcon(selectedIcon)
+      });
+
+      // source for setting and re-setting marker icon:
+      // https://stackoverflow.com/questions/11971326/how-to-tell-if-a-google-map-marker-is-currently-selected
+
+      window.google.maps.event.addListener(marker, 'mouseout', function () {
+        //  this overwrites the image again, 
+        this.setIcon(hallowIcon);
       });
 
     })
