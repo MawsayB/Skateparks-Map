@@ -19,4 +19,12 @@ body {
    font-weight: bold;
    display: inline-block;
  }
+
+ #popup-image {
+   margin-top: 10px;
+ }
+
+ #popup-text {
+   text-align: center;
+ }
  
