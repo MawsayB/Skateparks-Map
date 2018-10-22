@@ -57,7 +57,7 @@ class App extends Component {
   initMap = () => {
     /* Constructor creates a new map - only center and zoom are required. */
     var map = new window.google.maps.Map(document.getElementById('map'), {
-      center: { lat: 38.7131, lng: -90.4298 },
+      center: { lat: 38.7892, lng: -90.3226 },
       zoom: 10,
     })
 
@@ -77,7 +77,6 @@ class App extends Component {
       var image
 
       // changes API to be accurate to actual skate parks
-
       if (myVenue.venue.name === "Westhoff Plaza Skate Park") {
         address = "810 Sheppard Drive"
         name = myVenue.venue.name
@@ -196,6 +195,7 @@ class App extends Component {
             value={this.state.query}
             onChange={(event) => this.updateQuery(event.target.value)}
           />
+          <div id="clickable-park-list"></div>
         </Flexbox>
         <Flexbox element="section" id="map" height="100vh" width="100%">
         </Flexbox>
