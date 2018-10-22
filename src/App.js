@@ -188,7 +188,7 @@ class App extends Component {
     return (
       <Flexbox flexDirection="column" minHeight="100vh">
         <Flexbox element="section" id="searchPanel" width="100%">
-          <h1>SKATE PARKS</h1>
+          <div id="search-bar"><img src="" alt="skateboarder"></img><h1>SKATE PARKS</h1></div>
           <input
             type="text"
             placeholder="Search"

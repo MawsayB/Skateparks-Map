@@ -5,14 +5,14 @@ body {
   margin: 0;
   padding: 0;
 }
- input, #searchPanel {
+ input {
    margin-left: 8px;
    padding-left: 8px;
  }
 
  input {
    height: 30px;
-   margin-top: 15px;
+   margin-top: 30px;
  }
 
  #popup {
@@ -29,3 +29,11 @@ body {
    text-align: center;
  }
  
+ #search-bar {
+  margin-left: 20px;
+  padding-right: 10px;
+}
+
+#map {
+  height: 525px;
+}
