@@ -47,3 +47,7 @@ body {
 #map {
   height: 525px;
 }
+
+#park-names {
+  font-size: 12px;
+}
