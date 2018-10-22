@@ -7,6 +7,7 @@
 import './App.css'
 import React, { Component } from 'react'
 import Flexbox from 'flexbox-react'
+import Dropdown, { DropdownContent } from 'react-simple-dropdown'
 
 import axios from 'axios'
 
@@ -189,13 +190,12 @@ class App extends Component {
       <Flexbox flexDirection="column" minHeight="100vh">
         <Flexbox element="section" id="searchPanel" width="100%">
           <div id="search-bar"><img src="" alt="skateboarder"></img><h1>SKATE PARKS - ST. LOUIS, MISSOURI</h1></div>
-          <input
-            type="text"
-            placeholder="Search"
-            value={this.state.query}
-            onChange={(event) => this.updateQuery(event.target.value)}
-          />
-          <div id="clickable-park-list"></div>
+          <div id="clickable-park-list">
+            <Dropdown
+              title="Select Location"
+            >
+            </Dropdown>
+          </div>
         </Flexbox>
         <Flexbox element="section" id="map" height="100vh" width="100%">
         </Flexbox>
