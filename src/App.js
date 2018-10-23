@@ -148,7 +148,8 @@ class App extends Component {
       ${address} <br/>
       ${city}, ${state} ${postalCode}</div>`
 
-      var sideBar = document.querySelector("#clickable-park-list").innerHTML = `<div id="park-names">${name}`
+      // creates the list of clickable skateparks in the menu
+      document.getElementById('clickable-park-list').innerHTML = `<div id="park-names">${name}`
 
       var hallowIcon = 'https://png.icons8.com/ios/50/000000/skateboard.png'
       var selectedIcon = 'https://png.icons8.com/ios/50/000000/skateboard-filled.png'
@@ -196,12 +197,13 @@ class App extends Component {
             <h1>SKATE PARKS - ST. LOUIS, MISSOURI</h1>
           </div>
           <div id="clickable-park-list">
-
+            <ul>
+            </ul>
           </div>
         </Flexbox>
         <Flexbox element="section" id="map" height="100vh" width="100%">
         </Flexbox>
-      </Flexbox>
+      </Flexbox >
     )
   }
 }
