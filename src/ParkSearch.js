@@ -8,7 +8,12 @@ class ParkSearch extends React.Component {
     render() {
         return (
             <div className="search-bar">
-               <VenueList /> 
+                <input
+                    type={"search"}
+                    id={"search"}
+                    placeholder={"filter parks"}
+                />
+                <VenueList />
             </div>
         );
     }
