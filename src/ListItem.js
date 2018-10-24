@@ -4,12 +4,10 @@ import React, { Component } from 'react'
 
 class ListItem extends React.Component {
 
-
-
     render() {
         return (
             <ol className="listItem">
-                Hello World
+                Skate Park Name
             </ol>
         );
     }
