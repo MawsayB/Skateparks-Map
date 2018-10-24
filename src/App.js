@@ -9,6 +9,7 @@ import React, { Component } from 'react'
 import Flexbox from 'flexbox-react'
 
 import axios from 'axios'
+import ParkSearch from './ParkSearch';
 
 class App extends Component {
 
@@ -192,6 +193,9 @@ class App extends Component {
           <div id="search-bar">
             <img src="https://image.freepik.com/free-icon/skateboard_318-53918.jpg" alt="skateboarder"></img>
             <h1>SKATE PARKS - ST. LOUIS, MISSOURI</h1>
+          </div>
+          <div id="park-names">
+            <ParkSearch />
           </div>
         </Flexbox>
         <Flexbox element="section" id="map" height="100vh" width="100%">

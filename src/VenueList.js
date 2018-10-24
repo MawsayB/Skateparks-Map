@@ -1,17 +1,17 @@
 /* jshint ignore:start */
 
 import React, { Component } from 'react'
+import ListItem from './ListItem'
 
 class VenueList extends React.Component {
 
     // // creates the list of clickable skateparks in the menu
-    // document.getElementById('clickable-park-list').innerHTML = `<div id="park-names">${name}`
-
+    // document.getElementById('clickable-park-list').innerHTML = `<div id="park-names">${name
 
     render() {
         return (
             <ol className="venue-list">
-
+                <ListItem />
             </ol>
         );
     }

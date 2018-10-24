@@ -1,16 +1,14 @@
 /* jshint ignore:start */
 
 import React, { Component } from 'react'
+import VenueList from './VenueList'
 
 class ParkSearch extends React.Component {
-
-    
-
 
     render() {
         return (
             <div className="search-bar">
-                
+               <VenueList /> 
             </div>
         );
     }

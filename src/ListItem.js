@@ -8,8 +8,8 @@ class ListItem extends React.Component {
 
     render() {
         return (
-            <ol className="venue-list">
-
+            <ol className="listItem">
+                Hello World
             </ol>
         );
     }
