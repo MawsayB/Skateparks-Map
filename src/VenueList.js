@@ -11,7 +11,8 @@ class VenueList extends React.Component {
     render() {
         return (
             <ol className="venue-list">
-                <ListItem />
+                {this.props.venues && this.props.venues.map((venue, index) =>
+                <ListItem key={index} {...venue} />)}
             </ol>
         );
     }

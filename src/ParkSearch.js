@@ -13,7 +13,7 @@ class ParkSearch extends React.Component {
                     id={"search"}
                     placeholder={"filter parks"}
                 />
-                <VenueList />
+                <VenueList {...this.props} />
             </div>
         );
     }

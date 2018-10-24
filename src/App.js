@@ -195,7 +195,7 @@ class App extends Component {
             <h1>SKATE PARKS - ST. LOUIS, MISSOURI</h1>
           </div>
           <div id="park-names">
-            <ParkSearch />
+            <ParkSearch {... this.state} />
           </div>
         </Flexbox>
         <Flexbox element="section" id="map" height="100vh" width="100%">
