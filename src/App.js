@@ -70,7 +70,7 @@ class App extends Component {
       var address
       var name
       var city
-      var state
+      var stateAbbreviation
       var postalCode
       var lat
       var lng
@@ -81,7 +81,7 @@ class App extends Component {
         address = "810 Sheppard Drive"
         name = myVenue.venue.name
         city = myVenue.venue.location.city
-        state = myVenue.venue.location.state
+        stateAbbreviation = myVenue.venue.location.state
         postalCode = myVenue.venue.location.postalCode
         lat = myVenue.venue.location.lat
         lng = myVenue.venue.location.lng
@@ -90,7 +90,7 @@ class App extends Component {
         address = "3850 Huster Road"
         name = myVenue.venue.name
         city = myVenue.venue.location.city
-        state = myVenue.venue.location.state
+        stateAbbreviation = myVenue.venue.location.state
         postalCode = myVenue.venue.location.postalCode
         lat = myVenue.venue.location.lat
         lng = myVenue.venue.location.lng
@@ -99,7 +99,7 @@ class App extends Component {
         name = "Youth Activity Park"
         address = "7801 State Highway N"
         city = "Dardenne Prairie"
-        state = "MO"
+        stateAbbreviation = "MO"
         postalCode = "63368"
         lat = 38.769270
         lng = -90.763520
@@ -108,7 +108,7 @@ class App extends Component {
         name = "Peter Mathews Memorial Skate Garden"
         address = "4415 Morganford Road"
         city = "St. Louis"
-        state = "MO"
+        stateAbbreviation = "MO"
         postalCode = "63116"
         lat = 38.588140
         lng = -90.265200
@@ -117,7 +117,7 @@ class App extends Component {
         name = "Ramp Riders"
         address = " 2324 Salena Street"
         city = "St. Louis"
-        state = "MO"
+        stateAbbreviation = "MO"
         postalCode = "63104"
         lat = 38.606860
         lng = -90.216380
@@ -126,7 +126,7 @@ class App extends Component {
         name = "Earth Surf"
         address = "5555 St.Louis Mills Blvd #373"
         city = myVenue.venue.location.city
-        state = myVenue.venue.location.state
+        stateAbbreviation = myVenue.venue.location.state
         postalCode = myVenue.venue.location.postalCode
         lat = myVenue.venue.location.lat
         lng = myVenue.venue.location.lng
@@ -137,7 +137,7 @@ class App extends Component {
         address = myVenue.venue.address
         name = myVenue.venue.name
         city = myVenue.venue.location.city
-        state = myVenue.venue.location.state
+        stateAbbreviation = myVenue.venue.location.state
         postalCode = myVenue.venue.location.postalCode
         lat = myVenue.venue.location.lat
         lng = myVenue.venue.location.lng
@@ -146,7 +146,7 @@ class App extends Component {
 
       var contentString = `<div id="popup-image">${image}</div> <div id=popup-text><div id="popup"> ${name}</div><br/> 
       ${address} <br/>
-      ${city}, ${state} ${postalCode}</div>`
+      ${city}, ${stateAbbreviation} ${postalCode}</div>`
 
       // creates the list of clickable skateparks in the menu
       document.getElementById('clickable-park-list').innerHTML = `<div id="park-names">${name}`
@@ -197,13 +197,13 @@ class App extends Component {
             <h1>SKATE PARKS - ST. LOUIS, MISSOURI</h1>
           </div>
           <div id="clickable-park-list">
-            <ul>
-            </ul>
+            <li>
+            </li>
           </div>
         </Flexbox>
         <Flexbox element="section" id="map" height="100vh" width="100%">
         </Flexbox>
-      </Flexbox >
+      </Flexbox>
     )
   }
 }
