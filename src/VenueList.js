@@ -5,8 +5,7 @@ import ListItem from './ListItem'
 
 class VenueList extends React.Component {
 
-    // // creates the list of clickable skateparks in the menu
-    // document.getElementById('clickable-park-list').innerHTML = `<div id="park-names">${name
+    // creates the list of clickable skateparks in the menu
 
     render() {
         return (

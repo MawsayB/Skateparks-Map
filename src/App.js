@@ -161,7 +161,6 @@ class App extends Component {
         icon: hallowIcon
       })
 
-
       // click on a marker
       window.google.maps.event.addListener(marker, 'click', function () {
         // change the content
