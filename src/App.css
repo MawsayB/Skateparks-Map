@@ -51,3 +51,7 @@ body {
 #park-names {
   font-size: 12px;
 }
+
+.listItem {
+  list-style: none;
+}
