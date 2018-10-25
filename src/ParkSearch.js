@@ -1,6 +1,6 @@
 /* jshint ignore:start */
 
-import React, { Component } from 'react'
+import React from 'react'
 import VenueList from './VenueList'
 
 class ParkSearch extends React.Component {

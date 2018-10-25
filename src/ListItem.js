@@ -1,14 +1,14 @@
 /* jshint ignore:start */
 
-import React, { Component } from 'react'
+import React from 'react'
 
 class ListItem extends React.Component {
 
     render() {
         return (
-            <ol className="listItem">
-                Skate Park Name
-            </ol>
+            <li className="listItem">
+                {this.props.venue.name}
+            </li>
         );
     }
 }

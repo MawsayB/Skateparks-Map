@@ -1,6 +1,6 @@
 /* jshint ignore:start */
 
-import React, { Component } from 'react'
+import React from 'react'
 import ListItem from './ListItem'
 
 class VenueList extends React.Component {
@@ -10,10 +10,10 @@ class VenueList extends React.Component {
 
     render() {
         return (
-            <ol className="venue-list">
+            <ul className="venue-list">
                 {this.props.venues && this.props.venues.map((venue, index) =>
                 <ListItem key={index} {...venue} />)}
-            </ol>
+            </ul>
         );
     }
 }
