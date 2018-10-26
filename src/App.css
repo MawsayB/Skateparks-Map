@@ -13,8 +13,7 @@ body {
  input {
    height: 30px;
    width: 400px;
-   margin: auto;
-   display: block;
+   margin-left: 475px;
    text-align: center;
  }
 
@@ -45,7 +44,7 @@ body {
 }
 
 #map {
-  height: 525px;
+  height: 450px;
 }
 
 #park-names {
@@ -61,9 +60,14 @@ body {
 }
 
 .venue-list {
-  height: 125px;
+  height: 65px;
+  margin-left: 100px;
 }
 
 .search {
   display: table;
+}
+
+#top-section {
+  width: 100%;
 }
