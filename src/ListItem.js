@@ -22,6 +22,7 @@ class ListItem extends React.Component {
         } else {
             name = this.props.venue.name
         }
+
         return (
             <li className="listItem">
                 {name}
