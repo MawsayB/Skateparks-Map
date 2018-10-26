@@ -189,12 +189,15 @@ class App extends Component {
     return (
       <Flexbox flexDirection="column" minHeight="100vh">
         <Flexbox element="section" id="searchPanel" width="100%">
-          <div id="search-bar">
-            <img src="https://image.freepik.com/free-icon/skateboard_318-53918.jpg" alt="skateboarder"></img>
-            <h1>SKATE PARKS - ST. LOUIS, MISSOURI</h1>
-          </div>
-          <div id="park-names">
-            <ParkSearch {... this.state} />
+          <div id="top-section">
+            <div id="search-bar">
+            {/* TODO: figure out where to put this logo */}
+              {/* <img src="https://image.freepik.com/free-icon/skateboard_318-53918.jpg" alt="skateboarder"></img> */}
+              <h1>SKATE PARKS - ST. LOUIS, MISSOURI</h1>
+            </div>
+            <div id="park-names">
+              <ParkSearch {... this.state} />
+            </div>
           </div>
         </Flexbox>
         <Flexbox element="section" id="map" height="100vh" width="100%">

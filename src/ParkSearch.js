@@ -7,7 +7,7 @@ class ParkSearch extends React.Component {
 
     render() {
         return (
-            <div className="search-bar">
+            <div className="search">
                 <input
                     type={"search"}
                     id={"search"}
