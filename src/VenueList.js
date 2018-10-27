@@ -11,7 +11,7 @@ class VenueList extends React.Component {
         return (
             <ul className="venue-list">
                 {this.props.venues && this.props.venues.map((venue, index) =>
-                <ListItem key={index} {...venue} />)}
+                <ListItem key={index} {...venue} handleListItemClick={this.props.handleListItemClick} />)}
             </ul>
         );
     }

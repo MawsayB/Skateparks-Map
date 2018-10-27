@@ -55,6 +55,15 @@ class App extends Component {
       })
   }
 
+  handleListItemClick = venue => {
+    // const marker = venue
+    // parkID is the ID of the selected parkName
+    const parkID = venue.venue.id
+    const allVenues = this.state.venues
+    const theOne = allVenues.find(theSingleVenue => theSingleVenue.venue.id === parkID)
+    console.log(theOne)
+  }
+
   initMap = () => {
     /* Constructor creates a new map - only center and zoom are required. */
     var map = new window.google.maps.Map(document.getElementById('map'), {
@@ -158,7 +167,8 @@ class App extends Component {
         map: map,
         title: name,
         animation: window.google.maps.Animation.DROP,
-        icon: hallowIcon
+        icon: hallowIcon,
+        id: myVenue.venue.id
       })
 
       // click on a marker
@@ -181,7 +191,6 @@ class App extends Component {
         //  this overwrites the image again, 
         this.setIcon(hallowIcon);
       });
-
     })
   }
 
@@ -196,7 +205,7 @@ class App extends Component {
               <h1>SKATE PARKS - ST. LOUIS, MISSOURI</h1>
             </div>
             <div id="park-names">
-              <ParkSearch {... this.state} />
+              <ParkSearch {... this.state} handleListItemClick={this.handleListItemClick} />
             </div>
           </div>
         </Flexbox>

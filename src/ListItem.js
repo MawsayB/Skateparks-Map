@@ -24,7 +24,7 @@ class ListItem extends React.Component {
         }
 
         return (
-            <li className="listItem">
+            <li className="listItem" onClick={() => this.props.handleListItemClick(this.props)}>
                 {name}
             </li>
         );
