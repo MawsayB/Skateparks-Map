@@ -8,12 +8,17 @@ class ParkSearch extends React.Component {
     render() {
         return (
             <div className="search">
-                <input
-                    type={"search"}
-                    id={"search"}
-                    placeholder={"filter parks"}
-                />
-                <VenueList {...this.props} handleListItemClick={this.props.handleListItemClick} />
+                <div id="input-box">
+                    <label id="search-label">
+                        Search:
+                    <input
+                            type={"search"}
+                            id={"search"}
+                            placeholder={"filter parks"}
+                        />
+                    </label>
+                </div>
+                <VenueList className="clickable-park-name" {...this.props} handleListItemClick={this.props.handleListItemClick} />
             </div>
         );
     }

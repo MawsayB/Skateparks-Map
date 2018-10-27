@@ -56,12 +56,17 @@ class App extends Component {
   }
 
   handleListItemClick = venue => {
-    // const marker = venue
+    //locates the venue in the array that matches the venue selected    
+
     // parkID is the ID of the selected parkName
     const parkID = venue.venue.id
+    // the venues array
     const allVenues = this.state.venues
+    // the single venue's ID that matches the ID of the park clicked
     const theOne = allVenues.find(theSingleVenue => theSingleVenue.venue.id === parkID)
     console.log(theOne)
+    
+    // overall concept taken from: https://www.youtube.com/watch?v=lDVaZY0aG2w&index=7&list=PL4rQq4MQP1crXuPtruu_eijgOUUXhcUCP&t=0s
   }
 
   initMap = () => {
@@ -156,7 +161,7 @@ class App extends Component {
 
       var contentString = `<div id="popup-image">${image}</div> <div id=popup-text><div id="popup"> ${name}</div><br/> 
       ${address} <br/>
-      ${city}, ${stateAbbreviation} ${postalCode}</div>`
+      ${city}, ${stateAbbreviation} ${postalCode}</br/><div><a href="http://localhost:3000/">Back to Main</a></div></div>`
 
       var hallowIcon = 'https://png.icons8.com/ios/50/000000/skateboard.png'
       var selectedIcon = 'https://png.icons8.com/ios/50/000000/skateboard-filled.png'
@@ -177,6 +182,10 @@ class App extends Component {
         infowindow.setContent(contentString)
         // adds event listener to marker to display InfoWindow
         infowindow.open(map, marker)
+        // zooms to the marker of interest
+        map.setZoom(15)
+        map.setCenter(marker.getPosition())
+        // taken from: https://developers.google.com/maps/documentation/javascript/examples/event-simple
       });
 
       window.google.maps.event.addListener(marker, 'mouseover', function () {
@@ -200,7 +209,7 @@ class App extends Component {
         <Flexbox element="section" id="searchPanel" width="100%">
           <div id="top-section">
             <div id="search-bar">
-            {/* TODO: figure out where to put this logo */}
+              {/* TODO: figure out where to put this logo */}
               {/* <img src="https://image.freepik.com/free-icon/skateboard_318-53918.jpg" alt="skateboarder"></img> */}
               <h1>SKATE PARKS - ST. LOUIS, MISSOURI</h1>
             </div>

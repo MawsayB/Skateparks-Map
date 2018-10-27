@@ -13,7 +13,10 @@ body {
  input {
    height: 30px;
    width: 400px;
-   margin-left: 475px;
+   text-align: center;
+ }
+
+ #input-box {
    text-align: center;
  }
 
@@ -65,7 +68,7 @@ body {
   cursor: pointer;
 }
 
-.search {
+.clickable-park-name {
   display: table;
 }
 
