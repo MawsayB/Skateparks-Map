@@ -69,11 +69,22 @@ class App extends Component {
     // overall concept taken from: https://www.youtube.com/watch?v=lDVaZY0aG2w&index=7&list=PL4rQq4MQP1crXuPtruu_eijgOUUXhcUCP&t=0s
   }
 
+  
+
   initMap = () => {
     /* Constructor creates a new map - only center and zoom are required. */
+
+    // zooms in for an iPhone
+    var zoom;
+    if (window.innerHeight > 600){
+      zoom = 10;
+    } else {
+      zoom = 8;
+    }
+
     var map = new window.google.maps.Map(document.getElementById('map'), {
       center: { lat: 38.7892, lng: -90.3226 },
-      zoom: 10,
+      zoom: zoom
     })
 
     // creates InfoWindows
@@ -161,7 +172,7 @@ class App extends Component {
 
       var contentString = `<div id="popup-image">${image}</div> <div id=popup-text><div id="popup"> ${name}</div><br/> 
       ${address} <br/>
-      ${city}, ${stateAbbreviation} ${postalCode}</br/><div><a href="http://localhost:3000/">Back to Main</a></div></div>`
+      ${city}, ${stateAbbreviation} ${postalCode}<br/><br/><a href="http://localhost:3000/">Back to Main</a></div></div>`
 
       var hallowIcon = 'https://png.icons8.com/ios/50/000000/skateboard.png'
       var selectedIcon = 'https://png.icons8.com/ios/50/000000/skateboard-filled.png'
