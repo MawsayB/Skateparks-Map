@@ -62,6 +62,7 @@ body {
 .venue-list {
   height: 65px;
   margin-left: 100px;
+  cursor: pointer;
 }
 
 .search {
