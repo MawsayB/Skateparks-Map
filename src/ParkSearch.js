@@ -5,6 +5,31 @@ import VenueList from './VenueList'
 
 class ParkSearch extends React.Component {
 
+    // constructor() {
+    //     super()
+    //     this.state = {
+    //         query: ""
+    //     }
+    // }
+
+    // handleFilterVenues = () => {
+
+    // }
+
+    // handleChange = e => {
+    //     this.setState({query: e.target.value})
+    //     const markers = this.props.venues.map(marker => {
+    //         const isMatched = venue.name.toLowerCase().includes(e.target.value.toLowerCase())
+    //         const marker = this.props.markers.find(marker => marker.id === venue.id)
+    //         if(isMatched) {
+    //             marker.isVisible = true
+    //         } else {
+    //             marker.isVisible = false
+    //         }
+    //         return marker
+    //     })
+    // }
+
     render() {
         return (
             <div className="search">
