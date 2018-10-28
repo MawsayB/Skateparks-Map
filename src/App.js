@@ -164,11 +164,8 @@ class App extends Component {
       // // zooms to the marker of interest
       this.state.map.setZoom(15)
     }
-
     // overall concept taken from: https://www.youtube.com/watch?v=lDVaZY0aG2w&index=7&list=PL4rQq4MQP1crXuPtruu_eijgOUUXhcUCP&t=0s
   }
-
-
 
   initMap = () => {
     /* Constructor creates a new map - only center and zoom are required. */
