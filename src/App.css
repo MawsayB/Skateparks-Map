@@ -78,8 +78,11 @@ body {
 
 /* for phone */ 
 @media (max-width: 599px) {
-  #input-box, #park-names {
+  #input-box {
     display: none;
+  }
+  #park-names {
+    float: right;
   }
   h1 {
     font-size: 14px;
@@ -90,8 +93,18 @@ body {
     margin-left: 10px;
     margin-top: 8px;
   }
+  .listItem {
+    float: none;
+    font-size: 10px;
+    width: 50px;
+    margin-right: 10px;
+    text-align: center;
+    margin-top: 10px;
+  }
+  #top-section {
+    height: 40px;
+  }
 }
-
 
 /* for tablet landscape view */
 @media (min-width: 750px) and (max-width: 1199px){
