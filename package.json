@@ -6,6 +6,7 @@
     "axios": "^0.18.0",
     "flexbox-react": "^4.4.0",
     "google-maps-react": "^2.0.2",
+    "jquery": "^3.3.1",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-google-maps": "^9.4.5",

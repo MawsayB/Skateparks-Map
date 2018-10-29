@@ -24,9 +24,11 @@ class ListItem extends React.Component {
         }
 
         return (
+            <div id="parkButtons">
             <li className="listItem" onClick={() => this.props.handleListItemClick(this.props)}>
                 {name}
             </li>
+            </div>
         );
     }
 }

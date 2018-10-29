@@ -178,8 +178,15 @@ class App extends Component {
       zoom = 8;
     }
 
+    var center;
+    if (window.innerHeight > 600) {
+      center = { lat: 38.7892, lng: -90.3226 }
+    } else {
+      center = { lat: 38.7881, lng: -90.4974 }
+    }
+
     var map = new window.google.maps.Map(document.getElementById('map'), {
-      center: { lat: 38.7892, lng: -90.3226 },
+      center: center,
       zoom: zoom
     })
     this.setState({ map: map })
@@ -317,9 +324,7 @@ class App extends Component {
         <Flexbox element="section" id="searchPanel" width="100%">
           <div id="top-section">
             <div id="search-bar">
-              {/* TODO: figure out where to put this logo */}
-              {/* <img src="https://image.freepik.com/free-icon/skateboard_318-53918.jpg" alt="skateboarder"></img> */}
-              <h1>SKATE PARKS - ST. LOUIS, MISSOURI</h1>
+              <h1 tabindex="1">SKATE PARKS - ST. LOUIS, MISSOURI</h1>
             </div>
             <div id="park-names">
               <ParkSearch {... this.state} handleListItemClick={this.handleListItemClick} />
