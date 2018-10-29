@@ -46,7 +46,7 @@ class ParkSearch extends React.Component {
     render() {
         return (
             <div className="search">
-                <div id="input-box">
+                <div id="input-box" role="textbox">
                     <label id="search-label">
                         Search:
                     <input
