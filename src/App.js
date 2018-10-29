@@ -324,7 +324,7 @@ class App extends Component {
         <Flexbox element="section" id="searchPanel" width="100%">
           <div id="top-section">
             <div id="search-bar">
-              <h1 tabindex="1">SKATE PARKS - ST. LOUIS, MISSOURI</h1>
+              <h1 tabindex="1" role="heading">SKATE PARKS - ST. LOUIS, MISSOURI</h1>
             </div>
             <div id="park-names">
               <ParkSearch {... this.state} handleListItemClick={this.handleListItemClick} />
