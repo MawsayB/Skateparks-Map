@@ -324,14 +324,14 @@ class App extends Component {
         <Flexbox element="section" id="searchPanel" width="100%">
           <div id="top-section">
             <div id="search-bar">
-              <h1 tabindex="1" role="heading">SKATE PARKS - ST. LOUIS, MISSOURI</h1>
+              <h1 tabIndex="1">SKATE PARKS - ST. LOUIS, MISSOURI</h1>
             </div>
             <div id="park-names">
               <ParkSearch {... this.state} handleListItemClick={this.handleListItemClick} />
             </div>
           </div>
         </Flexbox>
-        <Flexbox element="section" tabindex="3" id="map" height="100vh" width="100%">
+        <Flexbox element="section" tabIndex="3" id="map" height="100vh" width="100%">
         </Flexbox>
       </Flexbox>
     )

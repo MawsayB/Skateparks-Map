@@ -2,7 +2,6 @@
 
 import React from 'react'
 import VenueList from './VenueList'
-import $ from 'jquery'; 
 
 class ParkSearch extends React.Component {
 
@@ -38,7 +37,8 @@ class ParkSearch extends React.Component {
     //     })
     // }
 
-    // 1. get the text searched
+    // 0. make a list of IDs and first letters (letter choices: Y, F, R, P, E, W)
+    // X 1. get the text searched
     // 2. compare it to the text on the venue buttons
     // 3. turn off buttons AND markers that don't match OR change border on those venue(s)
     // 4. when cleared undo change
