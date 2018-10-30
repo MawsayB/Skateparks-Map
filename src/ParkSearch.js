@@ -14,10 +14,10 @@ class ParkSearch extends React.Component {
     }
 
     componentDidMount = () => {
-        var storeVenuesOnList = document.getElementsByClassName("listItem")
-        console.log(storeVenuesOnList)
-        console.log("The list has been generated")
-        this.setState({storeVenuesOnList: storeVenuesOnList})
+        // var storeVenuesOnList = this.props.venue.id
+        // console.log(storeVenuesOnList)
+        // console.log("The list has been generated")
+        // this.setState({storeVenuesOnList: storeVenuesOnList})
     }
 
     handleChange = e => {
