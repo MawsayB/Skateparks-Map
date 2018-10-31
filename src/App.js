@@ -293,6 +293,11 @@ class App extends Component {
 
       // click on a marker
       window.google.maps.event.addListener(marker, 'click', function () {
+        if(marker.getAnimation() !== null) {
+          marker.setAnimation(null)
+        } else {
+          marker.setAnimation(window.google.maps.Animation.BOUNCE)
+        }
         // change the content
         infowindow.setContent(contentString)
         // adds event listener to marker to display InfoWindow
@@ -342,9 +347,8 @@ class App extends Component {
 function loadScript(url) {
   var index = window.document.getElementsByTagName("script")[0]
   var script = window.document.createElement("script")
+  // TODO: add message to user about resource loading error
   script.src = url
-  script.onload = script.resolve
-  script.onerror = alert("Error loading Google Maps")
   script.async = true
   script.defer = true
   index.parentNode.insertBefore(script, index)
