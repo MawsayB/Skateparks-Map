@@ -344,7 +344,7 @@ function loadScript(url) {
   var script = window.document.createElement("script")
   script.src = url
   script.onload = script.resolve
-  script.onerror = script.reject
+  script.onerror = alert("Error loading Google Maps")
   script.async = true
   script.defer = true
   index.parentNode.insertBefore(script, index)
