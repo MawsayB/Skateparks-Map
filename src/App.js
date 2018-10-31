@@ -331,7 +331,7 @@ class App extends Component {
             </div>
           </div>
         </Flexbox>
-        <Flexbox element="section" tabIndex="3" id="map" height="100vh" width="100%">
+        <Flexbox element="section" tabIndex="4" id="map" height="100vh" width="100%">
         </Flexbox>
       </Flexbox>
     )
