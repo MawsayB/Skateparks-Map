@@ -60,7 +60,7 @@ class App extends Component {
       })
   }
 
-  handleListItemClick = venue => {
+  handleListItemClick = (venue, marker) => {
     //locates the venue in the array that matches the venue selected    
 
     // parkID is the ID of the selected parkName
@@ -161,9 +161,10 @@ class App extends Component {
       this.state.map.panTo({lat : lat, lng: lng})  
       infowindow.setOptions({pixelOffset: { height: -40, width: 0}})
       infowindow.open(this.state.map)
-      // // zooms to the marker of interest
+      // zooms to the marker of interest
       this.state.map.setZoom(15)
     }
+    
     // overall concept taken from: https://www.youtube.com/watch?v=lDVaZY0aG2w&index=7&list=PL4rQq4MQP1crXuPtruu_eijgOUUXhcUCP&t=0s
   }
 
@@ -288,16 +289,15 @@ class App extends Component {
         title: name,
         animation: window.google.maps.Animation.DROP,
         icon: hallowIcon,
-        id: myVenue.venue.id
       })
+
+      window.google.maps.event.addListener(map, 'center_changed', function () {
+        marker.setAnimation(window.google.maps.Animation.BOUNCE)
+      });
 
       // click on a marker
       window.google.maps.event.addListener(marker, 'click', function () {
-        if(marker.getAnimation() !== null) {
-          marker.setAnimation(null)
-        } else {
-          marker.setAnimation(window.google.maps.Animation.BOUNCE)
-        }
+        marker.setAnimation(window.google.maps.Animation.BOUNCE)
         // change the content
         infowindow.setContent(contentString)
         // adds event listener to marker to display InfoWindow

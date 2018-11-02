@@ -5,11 +5,10 @@ import VenueList from './VenueList'
 
 class ParkSearch extends React.Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
-            query: "",
-            storeVenuesOnList: []
+            inputValue: "",
         }
     }
 
@@ -20,22 +19,11 @@ class ParkSearch extends React.Component {
         // this.setState({storeVenuesOnList: storeVenuesOnList})
     }
 
-    handleChange = e => {
-        this.setState({ query: e.target.value })
-        var venuesAvailable = this.state.storeVenuesOnList
+    handleSearch = event => {
+        // get the entry typed by the user
+        this.setState({ inputValue: event.target.value })
+        console.log(this.state.inputValue)
     }
-
-    //     const markers = this.props.venues.map(marker => {
-    //         const isMatched = venue.name.toLowerCase().includes(e.target.value.toLowerCase())
-    //         const marker = this.props.markers.find(marker => marker.id === venue.id)
-    //         if (isMatched) {
-    //             marker.isVisible = true
-    //         } else {
-    //             marker.isVisible = false
-    //         }
-    //         return marker
-    //     })
-    // }
 
     // 0. make a list of IDs and first letters (letter choices: Y, F, R, P, E, W)
     // X 1. get the text searched
@@ -52,11 +40,16 @@ class ParkSearch extends React.Component {
                     <input
                             type={"search"}
                             id={"search"}
-                            placeholder={"filter parks"}
+                            placeholder={"filter parks"}  
                         />
                     </label>
                 </div>
-                <VenueList className="clickable-park-name" {...this.props} handleListItemClick={this.props.handleListItemClick} />
+                <VenueList 
+                    value={this.state.query}
+                    onChange={event => this.updateInputValue(event)} 
+                    className="clickable-park-name" 
+                    {...this.props} 
+                    handleListItemClick={this.props.handleListItemClick} />
             </div>
         );
     }
@@ -64,4 +57,7 @@ class ParkSearch extends React.Component {
 
 export default ParkSearch;
 
-/* designed based on: https://www.youtube.com/watch?v=lDVaZY0aG2w&index=7&list=PL4rQq4MQP1crXuPtruu_eijgOUUXhcUCP&t=0s */
+/* resources used:
+https://www.youtube.com/watch?v=lDVaZY0aG2w&index=7&list=PL4rQq4MQP1crXuPtruu_eijgOUUXhcUCP&t=0s 
+https://stackoverflow.com/questions/36683770/how-to-get-the-value-of-an-input-field-using-reactjs
+https://reactjs.org/docs/handling-events.html */

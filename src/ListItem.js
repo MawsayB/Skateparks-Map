@@ -24,7 +24,7 @@ class ListItem extends React.Component {
         }
 
         return (
-            <div id="parkButtons">
+            <div className="parkButtons">
             <li tabIndex="3" className="listItem" aria-label={name} onClick={() => this.props.handleListItemClick(this.props)}>
                 {name}
             </li>
