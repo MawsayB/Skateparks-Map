@@ -76,6 +76,13 @@ body {
   width: 100%;
 }
 
+.dropdown {
+  text-align: center;
+  width: 15%;
+  margin-left: 40%;
+}
+
+
 /* for phone */ 
 @media (max-width: 599px) {
   #input-box {
