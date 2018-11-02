@@ -16,10 +16,10 @@ class App extends Component {
   constructor() {
     super();
     this.infowindow = []
-      this.state = {
-        venues: [],
-        map: 0
-      }
+    this.state = {
+      venues: [],
+      map: 0
+    }
   }
 
   componentDidMount() {
@@ -157,14 +157,14 @@ class App extends Component {
 
       var infowindow = new window.google.maps.InfoWindow()
       infowindow.setContent(contentString)
-      infowindow.setPosition({lat : lat, lng: lng})
-      this.state.map.panTo({lat : lat, lng: lng})  
-      infowindow.setOptions({pixelOffset: { height: -40, width: 0}})
+      infowindow.setPosition({ lat: lat, lng: lng })
+      this.state.map.panTo({ lat: lat, lng: lng })
+      infowindow.setOptions({ pixelOffset: { height: -40, width: 0 } })
       infowindow.open(this.state.map)
       // zooms to the marker of interest
       this.state.map.setZoom(15)
     }
-    
+
     // overall concept taken from: https://www.youtube.com/watch?v=lDVaZY0aG2w&index=7&list=PL4rQq4MQP1crXuPtruu_eijgOUUXhcUCP&t=0s
   }
 

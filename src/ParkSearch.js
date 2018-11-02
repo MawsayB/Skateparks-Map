@@ -5,26 +5,6 @@ import VenueList from './VenueList'
 
 class ParkSearch extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            inputValue: "",
-        }
-    }
-
-    componentDidMount = () => {
-        // var storeVenuesOnList = this.props.venue.id
-        // console.log(storeVenuesOnList)
-        // console.log("The list has been generated")
-        // this.setState({storeVenuesOnList: storeVenuesOnList})
-    }
-
-    handleSearch = event => {
-        // get the entry typed by the user
-        this.setState({ inputValue: event.target.value })
-        console.log(this.state.inputValue)
-    }
-
     // 0. make a list of IDs and first letters (letter choices: Y, F, R, P, E, W)
     // X 1. get the text searched
     // 2. compare it to the text on the venue buttons
@@ -34,18 +14,7 @@ class ParkSearch extends React.Component {
     render() {
         return (
             <div className="search">
-                <div id="input-box" role="textbox">
-                    <label id="search-label">
-                        Search:
-                    <input
-                            type={"search"}
-                            id={"search"}
-                            placeholder={"filter parks"}  
-                        />
-                    </label>
-                </div>
                 <VenueList 
-                    value={this.state.query}
                     onChange={event => this.updateInputValue(event)} 
                     className="clickable-park-name" 
                     {...this.props} 
