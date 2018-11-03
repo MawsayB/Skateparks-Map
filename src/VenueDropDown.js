@@ -5,16 +5,12 @@ import Dropdown from 'react-dropdown'
 
 class VenueDropDown extends React.Component {
 
-    // X 1. add drop down menu
-    // X 2. add venues to menu
-    // 3. when selected:
-    //    A. remove all other parks from the button list
-    //    B. remove all markers but that location
-
+    // TODO: reset buttons when another drop down item is clicked 
+    
     onChange(options) {
         // grabs the index of the value selected
         const clickedIndex = options.value[0]
-        // keep only that index in the buttons
+        // keeps only that index in the buttons
         if(clickedIndex === "0") {
             document.getElementsByClassName('listItem')[1].style.visibility = 'hidden'
             document.getElementsByClassName('listItem')[2].style.visibility = 'hidden'
