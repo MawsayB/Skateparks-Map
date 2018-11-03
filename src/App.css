@@ -80,6 +80,19 @@ body {
   text-align: center;
   width: 25%;
   margin-left: 37%;
+  margin-top: 20px;
+}
+
+.refresh-button {
+  text-decoration: none;
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 12px;
+  color: black;
+  background: lightsalmon;
+  margin-right: 50px;
+  font-weight: bold;
+  
 }
 
 

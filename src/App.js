@@ -330,6 +330,7 @@ class App extends Component {
           <div id="top-section">
             <div id="search-bar">
               <h1 tabIndex="1">SKATE PARKS - ST. LOUIS, MISSOURI</h1>
+              <a href="http://localhost:3000/" className="refresh-button">Revert Map</a>
             </div>
             <div id="park-names">
               <ParkSearch {... this.state} handleListItemClick={this.handleListItemClick} />
