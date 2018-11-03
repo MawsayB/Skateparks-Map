@@ -1,34 +1,80 @@
 /* jshint ignore:start */
 
 import React from 'react'
-import ListItem from './ListItem'
 import Dropdown from 'react-dropdown'
 
 class VenueDropDown extends React.Component {
 
-    // 1. add drop down menu
-    // 2. add venues to menu
+    // X 1. add drop down menu
+    // X 2. add venues to menu
     // 3. when selected:
     //    A. remove all other parks from the button list
     //    B. remove all markers but that location
 
+    onChange(options) {
+        // grabs the index of the value selected
+        const clickedIndex = options.value[0]
+        // keep only that index in the buttons
+        if(clickedIndex === "0") {
+            document.getElementsByClassName('listItem')[1].style.visibility = 'hidden'
+            document.getElementsByClassName('listItem')[2].style.visibility = 'hidden'
+            document.getElementsByClassName('listItem')[3].style.visibility = 'hidden'
+            document.getElementsByClassName('listItem')[4].style.visibility = 'hidden'
+            document.getElementsByClassName('listItem')[5].style.visibility = 'hidden'
+        } else if (clickedIndex === "1"){
+            document.getElementsByClassName('listItem')[0].style.visibility = 'hidden'
+            document.getElementsByClassName('listItem')[2].style.visibility = 'hidden'
+            document.getElementsByClassName('listItem')[3].style.visibility = 'hidden'
+            document.getElementsByClassName('listItem')[4].style.visibility = 'hidden'
+            document.getElementsByClassName('listItem')[5].style.visibility = 'hidden'
+        } else if (clickedIndex === "2"){
+            document.getElementsByClassName('listItem')[0].style.visibility = 'hidden'
+            document.getElementsByClassName('listItem')[1].style.visibility = 'hidden'
+            document.getElementsByClassName('listItem')[3].style.visibility = 'hidden'
+            document.getElementsByClassName('listItem')[4].style.visibility = 'hidden'
+            document.getElementsByClassName('listItem')[5].style.visibility = 'hidden'
+        } else if (clickedIndex === "3"){
+            document.getElementsByClassName('listItem')[0].style.visibility = 'hidden'
+            document.getElementsByClassName('listItem')[1].style.visibility = 'hidden'
+            document.getElementsByClassName('listItem')[2].style.visibility = 'hidden'
+            document.getElementsByClassName('listItem')[4].style.visibility = 'hidden'
+            document.getElementsByClassName('listItem')[5].style.visibility = 'hidden'
+        } else if (clickedIndex === "4"){
+            document.getElementsByClassName('listItem')[0].style.visibility = 'hidden'
+            document.getElementsByClassName('listItem')[1].style.visibility = 'hidden'
+            document.getElementsByClassName('listItem')[2].style.visibility = 'hidden'
+            document.getElementsByClassName('listItem')[3].style.visibility = 'hidden'
+            document.getElementsByClassName('listItem')[5].style.visibility = 'hidden'
+        } else if (clickedIndex === "5"){
+            document.getElementsByClassName('listItem')[0].style.visibility = 'hidden'
+            document.getElementsByClassName('listItem')[1].style.visibility = 'hidden'
+            document.getElementsByClassName('listItem')[2].style.visibility = 'hidden'
+            document.getElementsByClassName('listItem')[3].style.visibility = 'hidden'
+            document.getElementsByClassName('listItem')[4].style.visibility = 'hidden'
+        }
+    }
+
+    // builds a drop down menu
     render() {
         const options = [
-            { value: 'E', label: 'Earth Surf' },
-            { value: 'F', label: 'Fountain Lakes Park' },
-            { value: 'P', label: 'Peter Mathews Memorial Skate Garden' },
-            { value: 'R', label: 'Ramp Riders' },
-            { value: 'W', label: 'Westoff Plaza Skate Park' },
-            { value: 'Y', label: 'Youth Activity Park' }
-          ]
+            { value: '4', label: 'Earth Surf' },
+            { value: '1', label: 'Fountain Lakes Park' },
+            { value: '3', label: 'Peter Mathews Memorial Skate Garden' },
+            { value: '2', label: 'Ramp Riders' },
+            { value: '5', label: 'Westoff Plaza Skate Park' },
+            { value: '0', label: 'Youth Activity Park' }
+        ]
         return (
             <Dropdown
                 className="dropdown"
                 placeholder="Pick a Park"
                 options={options}
+                onChange={this.onChange}
             />
         );
     }
 }
 
 export default VenueDropDown;
+
+// DropDown component from: https://www.npmjs.com/package/react-dropdown
