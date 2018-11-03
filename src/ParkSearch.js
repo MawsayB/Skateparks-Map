@@ -2,24 +2,19 @@
 
 import React from 'react'
 import VenueList from './VenueList'
-import Dropdown from 'react-dropdown'
 import 'react-dropdown/style.css'
+import VenueDropDown from './VenueDropDown';
 
 class ParkSearch extends React.Component {
 
-    // 1. add drop down menu
-    // 2. add venues to menu
-    // 3. when selected:
-    //    A. remove all other parks from the button list
-    //    B. remove all markers but that location
+
 
     render() {
         return (
             <div className="search">
                 <div className="dropdown-container">
-                    <Dropdown
-                        className="dropdown"
-                        placeholder="Pick a Park"
+                    <VenueDropDown
+                        {...this.props}
                     />
                 </div>
                 <VenueList
