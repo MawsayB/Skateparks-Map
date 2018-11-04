@@ -60,6 +60,10 @@ class App extends Component {
       })
   }
 
+  handleVenueDropDownSelection = () => {
+    
+  }
+
   handleListItemClick = (venue, marker) => {
     //locates the venue in the array that matches the venue selected    
 
