@@ -9,7 +9,7 @@ class VenueList extends React.Component {
 
     render() {
         return (
-            <ul className="venue-list" tabIndex="2">
+            <ul className="venue-list" tabIndex="4">
                 {this.props.venues && this.props.venues.map((venue, index) =>
                 <ListItem id="button" key={index} {...venue} handleListItemClick={this.props.handleListItemClick} />)}
             </ul>

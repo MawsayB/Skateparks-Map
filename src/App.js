@@ -330,14 +330,14 @@ class App extends Component {
           <div id="top-section">
             <div id="search-bar">
               <h1 tabIndex="1">SKATE PARKS - ST. LOUIS, MISSOURI</h1>
-              <a href="http://localhost:3000/" className="refresh-button">Revert Map</a>
+              <a href="http://localhost:3000/" className="refresh-button" tabIndex="2">Revert Map</a>
             </div>
             <div id="park-names">
               <ParkSearch {... this.state} handleListItemClick={this.handleListItemClick} />
             </div>
           </div>
         </Flexbox>
-        <Flexbox element="section" tabIndex="4" id="map" height="100vh" width="100%">
+        <Flexbox element="section" tabIndex="5" id="map" height="100vh" width="100%">
         </Flexbox>
       </Flexbox>
     )
