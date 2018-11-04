@@ -171,6 +171,7 @@ class App extends Component {
   initMap = () => {
     /* Constructor creates a new map - only center and zoom are required. */
 
+    let markers = []
     // zooms in for an iPhone
     var zoom;
     if (window.innerHeight > 600) {
@@ -290,6 +291,8 @@ class App extends Component {
         animation: window.google.maps.Animation.DROP,
         icon: hallowIcon,
       })
+      this.setState({ marker: markers })
+      console.log(markers)
 
       window.google.maps.event.addListener(map, 'center_changed', function () {
         marker.setAnimation(window.google.maps.Animation.BOUNCE)
