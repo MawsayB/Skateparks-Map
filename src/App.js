@@ -60,11 +60,7 @@ class App extends Component {
       })
   }
 
-  handleVenueDropDownSelection = () => {
-    
-  }
-
-  handleListItemClick = (venue, marker) => {
+  handleListItemClick = (venue) => {
     //locates the venue in the array that matches the venue selected    
 
     // parkID is the ID of the selected parkName
@@ -175,7 +171,6 @@ class App extends Component {
   initMap = () => {
     /* Constructor creates a new map - only center and zoom are required. */
 
-    let markers = []
     // zooms in for an iPhone
     var zoom;
     if (window.innerHeight > 600) {
@@ -295,8 +290,6 @@ class App extends Component {
         animation: window.google.maps.Animation.DROP,
         icon: hallowIcon,
       })
-      this.setState({ marker: markers })
-      console.log(markers)
 
       window.google.maps.event.addListener(map, 'center_changed', function () {
         marker.setAnimation(window.google.maps.Animation.BOUNCE)
@@ -327,6 +320,7 @@ class App extends Component {
         //  this overwrites the image again, 
         this.setIcon(hallowIcon);
       });
+
     })
   }
 
@@ -340,7 +334,10 @@ class App extends Component {
               <a href="http://localhost:3000/" className="refresh-button" tabIndex="2">Revert Map</a>
             </div>
             <div id="park-names">
-              <ParkSearch {... this.state} handleListItemClick={this.handleListItemClick} />
+              <ParkSearch 
+                {... this.state} 
+                handleListItemClick={this.handleListItemClick}
+                handleDropDownMenuClick={this.handleDropDownMenuClick} />
             </div>
           </div>
         </Flexbox>

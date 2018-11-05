@@ -13,13 +13,15 @@ class ParkSearch extends React.Component {
                 <div className="dropdown-container">
                     <VenueDropDown
                         {...this.props}
+                        handleDropDownMenuClick={this.props.handleDropDownMenuClick}
                     />
                 </div>
                 <VenueList
                     onChange={event => this.updateInputValue(event)}
                     className="clickable-park-name"
                     {...this.props}
-                    handleListItemClick={this.props.handleListItemClick} />
+                    handleListItemClick={this.props.handleListItemClick}
+                />
             </div>
         );
     }

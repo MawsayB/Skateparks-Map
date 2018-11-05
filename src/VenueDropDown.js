@@ -4,42 +4,42 @@ import React from 'react'
 import Dropdown from 'react-dropdown'
 
 class VenueDropDown extends React.Component {
-    
+
     onChange(options) {
         // grabs the index of the value selected
         const clickedIndex = options.value[0]
         // keeps only that index in the buttons
-        if(clickedIndex === "0") {
+        if (clickedIndex === "0") {
             document.getElementsByClassName('listItem')[1].style.visibility = 'hidden'
             document.getElementsByClassName('listItem')[2].style.visibility = 'hidden'
             document.getElementsByClassName('listItem')[3].style.visibility = 'hidden'
             document.getElementsByClassName('listItem')[4].style.visibility = 'hidden'
             document.getElementsByClassName('listItem')[5].style.visibility = 'hidden'
-        } else if (clickedIndex === "1"){
+        } else if (clickedIndex === "1") {
             document.getElementsByClassName('listItem')[0].style.visibility = 'hidden'
             document.getElementsByClassName('listItem')[2].style.visibility = 'hidden'
             document.getElementsByClassName('listItem')[3].style.visibility = 'hidden'
             document.getElementsByClassName('listItem')[4].style.visibility = 'hidden'
             document.getElementsByClassName('listItem')[5].style.visibility = 'hidden'
-        } else if (clickedIndex === "2"){
+        } else if (clickedIndex === "2") {
             document.getElementsByClassName('listItem')[0].style.visibility = 'hidden'
             document.getElementsByClassName('listItem')[1].style.visibility = 'hidden'
             document.getElementsByClassName('listItem')[3].style.visibility = 'hidden'
             document.getElementsByClassName('listItem')[4].style.visibility = 'hidden'
             document.getElementsByClassName('listItem')[5].style.visibility = 'hidden'
-        } else if (clickedIndex === "3"){
+        } else if (clickedIndex === "3") {
             document.getElementsByClassName('listItem')[0].style.visibility = 'hidden'
             document.getElementsByClassName('listItem')[1].style.visibility = 'hidden'
             document.getElementsByClassName('listItem')[2].style.visibility = 'hidden'
             document.getElementsByClassName('listItem')[4].style.visibility = 'hidden'
             document.getElementsByClassName('listItem')[5].style.visibility = 'hidden'
-        } else if (clickedIndex === "4"){
+        } else if (clickedIndex === "4") {
             document.getElementsByClassName('listItem')[0].style.visibility = 'hidden'
             document.getElementsByClassName('listItem')[1].style.visibility = 'hidden'
             document.getElementsByClassName('listItem')[2].style.visibility = 'hidden'
             document.getElementsByClassName('listItem')[3].style.visibility = 'hidden'
             document.getElementsByClassName('listItem')[5].style.visibility = 'hidden'
-        } else if (clickedIndex === "5"){
+        } else if (clickedIndex === "5") {
             document.getElementsByClassName('listItem')[0].style.visibility = 'hidden'
             document.getElementsByClassName('listItem')[1].style.visibility = 'hidden'
             document.getElementsByClassName('listItem')[2].style.visibility = 'hidden'
